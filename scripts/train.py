@@ -55,8 +55,8 @@ def main(args):
     print(f"Loaded dataset with {len(df)} rows and {len(df.columns)} columns.")
 
     # Split features and target
-    X = df.drop(columns=["Appeal_Result"])
-    y = df["Appeal_Result"]
+    X = df.drop(columns=["AppealStatus"])
+    y = df["AppealStatus"]
 
     # Initialize model
     model = get_model(args.model)
