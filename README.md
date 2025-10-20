@@ -23,9 +23,8 @@ DS 4002 – 001 – 1pm – October 2025
   - `numpy` – numerical processing  
   - `matplotlib`, `seaborn` – visualizations  
   - `vaderSentiment` – lexicon-based sentiment analysis  
-  - `transformers` (Hugging Face) – pretrained transformer models  
-    - `bert-base-multilingual-uncased-sentiment` 
-    - `distilbert-base-uncased-emotion`  
+  - `scikit-learn` (sklearn) – building and evaulating machine learning models
+  - `xgboost` - library for our SVM model 
 - **Platform:** Code developed and tested on Windows and MacOS  
 
 ---
