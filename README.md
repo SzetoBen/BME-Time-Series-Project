@@ -2,7 +2,7 @@
 # Predicting Charlottesville Parking Ticket Appeal Success Using Time Series Analysis   
 
 ## Group  
-**BME –  Masato Takedai (leader), Ben Szeto, Eddie Zhang,**  
+**BME –  Masato Takedai (leader), Ben Szeto, Eddie Zhang**  
 DS 4002 – 001 – 1pm – October 2025  
 
 ---
