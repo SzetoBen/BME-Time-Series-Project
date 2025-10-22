@@ -19,14 +19,14 @@ AppealGrantedDate, Date the appeal was granted, 08/20/2021 \
 AppealStatus, If the appeal was granted or denied, n/a, granted, denied \
 IssuedDate, When the ticket was given, 7/21/2021, 12:00 AM \
 LicensePlateAnonymized, The license plate of the car ticketed, anonymized 90,987 \
-LicenseState, Where the car is from, VA, NC 
+LicenseState, Where the car is from, VA, NC \
 Location, Where the ticket took place, 1609 UNIVERSITY AVE \
 StreetName, The street where the ticket took place, 13TH ST NW \
 BlockNumber, The block number where the ticket took place, 100, 1700 \
 TicketNumber, What number ticket it was, 0889503 \
 TimeIssued, When the ticket was issued, 11:20 \
 WaiverGrantedDate, When a waiver was granted, 12/30/2022 \
-WaiverRequestDate, When a waiver was requested, 12/30/2024 \ 
+WaiverRequestDate, When a waiver was requested, 12/30/2024 \
 WaiverStatus, If a waiver was granted, Granted \
 ViolationDescription, What kind of ticket it was, Violation of Meter Ordinance \
 
