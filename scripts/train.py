@@ -48,10 +48,12 @@ def get_model(model_name):
 
 def main(args):
     # Ensure outputs folder exists
-    os.makedirs("outputs", exist_ok=True)
+    os.makedirs("output", exist_ok=True)
 
     # Load pre-cleaned dataset
     df = pd.read_csv(args.data)
+    df = df.drop(['DateIssued', 'AppealDate', 'AppealGrantedDate'], axis=1)
+    df = df.dropna()
     print(f"Loaded dataset with {len(df)} rows and {len(df.columns)} columns.")
 
     # Split features and target
@@ -83,7 +85,7 @@ def main(args):
     conf_matrix = confusion_matrix(y_test, y_pred)
 
     # Save text outputs
-    output_text_file = os.path.join("outputs", f"results_{args.model}.txt")
+    output_text_file = os.path.join("output", f"results_{args.model}.txt")
     with open(output_text_file, "w") as f:
         f.write(f"Model: {args.model}\n")
         f.write(f"Average 5-Fold CV F1-Score: {avg_cv_f1:.3f}\n\n")
@@ -98,7 +100,7 @@ def main(args):
     # Save ROC curve plot
     RocCurveDisplay.from_predictions(y_test, y_pred_prob)
     plt.title(f"ROC Curve – {args.model.upper()}")
-    roc_image_path = os.path.join("outputs", f"roc_{args.model}.png")
+    roc_image_path = os.path.join("output", f"roc_{args.model}.png")
     plt.savefig(roc_image_path, bbox_inches="tight")
     plt.close()
     print(f"ROC curve saved to: {roc_image_path}")
