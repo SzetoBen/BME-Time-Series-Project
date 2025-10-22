@@ -66,7 +66,18 @@ BME-Time-Series-Project
     Use the cleaning notebook "ParkingTicketsCleaning.ipynb" in the scripts folder to clean the dataset. Resulting cleaned dataset will be in the data folder.
 4. **Training models**
     1) **Train models using train.py**\
-        1. 
+        1. Run these commands from project root level directory to train all models
+        1. `python .\scripts\train.py --data .\data\Processed_Parking_Tickets.csv --model logistic`
+        2. `python .\scripts\train.py --data .\data\Processed_Parking_Tickets.csv --model xgboost`
+        3. `python .\scripts\train.py --data .\data\Processed_Parking_Tickets.csv --model random_forest`
+5. **Analyze Results**
+    All training results for each model will be stored in the `output` folder which includes:
+    1) Text Metrics File 
+        1. Precision and Recall Scores
+        2. F-1 Score
+        3. ROC-AUC Score
+        4. Feature Importance
+    2) ROC curve
     
 1) https://datauvalibrary.opendata.arcgis.com/datasets/charlottesville::parking-tickets/about
 
