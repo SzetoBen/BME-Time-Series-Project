@@ -28,7 +28,7 @@ TimeIssued, When the ticket was issued, 11:20 \
 WaiverGrantedDate, When a waiver was granted, 12/30/2022 \
 WaiverRequestDate, When a waiver was requested, 12/30/2024 \
 WaiverStatus, If a waiver was granted, Granted \
-ViolationDescription, What kind of ticket it was, Violation of Meter Ordinance \
+ViolationDescription, What kind of ticket it was, Violation of Meter Ordinance
 
 *See data folder for exploratory plots images* \
 Fig 1: Heatmap of parking ticket locations in the City of Charlottesville \
