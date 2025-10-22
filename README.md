@@ -36,7 +36,7 @@ BME-Time-Series-Project
 ├── data
 │   ├── Parking_Tickets.csv
 │   ├── Processed_Parking_Tickets.csv
-│   ├── Metadata.md
+│   ├── METADATA.md
 │   ├── Figure 1.png
 │   └── Figure 2.png
 ├── LICENSE
