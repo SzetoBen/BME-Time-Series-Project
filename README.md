@@ -48,6 +48,7 @@ BME-Time-Series-Project
 │   ├── roc_random_forest.png
 │   └── roc_xgboost.png
 ├── README.md
+├── requirements.txt
 └── scripts
     ├── ParkingTicketsCleaning.ipynb
     └── train.py
