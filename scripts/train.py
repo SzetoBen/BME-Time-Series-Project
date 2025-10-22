@@ -52,7 +52,6 @@ def main(args):
 
     # Load pre-cleaned dataset
     df = pd.read_csv(args.data)
-    df = df.drop(['DateIssued', 'AppealDate', 'AppealGrantedDate'], axis=1)
     df = df.dropna()
     print(f"Loaded dataset with {len(df)} rows and {len(df.columns)} columns.")
 
@@ -85,7 +84,8 @@ def main(args):
     conf_matrix = confusion_matrix(y_test, y_pred)
 
     # Save text outputs
-    output_text_file = os.path.join("output", f"results_{args.model}.txt")
+        # 8️⃣ Save textual results
+    output_text_file = os.path.join("output", f"new_results_{args.model}.txt")
     with open(output_text_file, "w") as f:
         f.write(f"Model: {args.model}\n")
         f.write(f"Average 5-Fold CV F1-Score: {avg_cv_f1:.3f}\n\n")
@@ -95,12 +95,37 @@ def main(args):
         f.write("Confusion Matrix:\n")
         np.savetxt(f, conf_matrix, fmt="%d")
 
+        f.write("\n\nFeature Importances / Coefficients:\n")
+
+        # Ensure column names align with model input
+        feature_names = list(X.columns)
+
+        try:
+            if hasattr(model, "feature_importances_"):  # Tree-based models
+                importances = model.feature_importances_
+                sorted_idx = np.argsort(importances)[::-1]
+                for idx in sorted_idx[:20]:  # Top 20 features
+                    f.write(f"{feature_names[idx]}: {importances[idx]:.4f}\n")
+
+            elif hasattr(model, "coef_"):  # Logistic Regression
+                coefs = model.coef_.ravel()
+                sorted_idx = np.argsort(np.abs(coefs))[::-1]
+                for idx in sorted_idx[:20]:  # Top 20 strongest coefficients
+                    f.write(f"{feature_names[idx]}: {coefs[idx]:.4f}\n")
+
+            else:
+                f.write("Feature importance not available for this model type.\n")
+
+        except Exception as e:
+            f.write(f"Error extracting feature importance: {e}\n")
+
+
     print(f"\nResults saved to: {output_text_file}")
 
     # Save ROC curve plot
     RocCurveDisplay.from_predictions(y_test, y_pred_prob)
     plt.title(f"ROC Curve – {args.model.upper()}")
-    roc_image_path = os.path.join("output", f"roc_{args.model}.png")
+    roc_image_path = os.path.join("output", f"new_roc_{args.model}.png")
     plt.savefig(roc_image_path, bbox_inches="tight")
     plt.close()
     print(f"ROC curve saved to: {roc_image_path}")
