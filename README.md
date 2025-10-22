@@ -2,7 +2,7 @@
 # Predicting Charlottesville Parking Ticket Appeal Success Using Time Series Analysis   
 
 ## Group  
-**BME –  Masato Takedai (leader), Ben Szeto, Eddie Zhang,**  
+**BME –  Masato Takedai (leader), Ben Szeto, Eddie Zhang**  
 DS 4002 – 001 – 1pm – October 2025  
 
 ---
@@ -30,24 +30,42 @@ DS 4002 – 001 – 1pm – October 2025
 ---
 
 ## Project Folder Map  
- TODO
+ ```
+BME-Time-Series-Project
+
+├── data
+│   ├── Parking_Tickets.csv
+│   ├── Processed_Parking_Tickets.csv
+│   ├── Metadata.md
+│   ├── Figure 1.png
+│   └── Figure 2.png
+├── LICENSE
+├── output
+│   ├── results_logistic.txt
+│   ├── results_random_forest.txt
+│   ├── results_xgboost.txt
+│   ├── roc_logistic.png
+│   ├── roc_random_forest.png
+│   └── roc_xgboost.png
+├── README.md
+└── scripts
+    ├── ParkingTicketsCleaning.ipynb
+    └── train.py
+```
 
 ---
 
 ## Instructions for Reproducing Results  
 1. **Clone the repository**  
    ```bash
-   git clone https://github.com/SzetoBen/BME-Text-Project
-   cd BME-AI-Sentiment-Project
+   git clone https://github.com/SzetoBen/BME-Time-Series-Project
 2. **Install dependencies**\
     pip install -r requirements.txt
 3. **Prepare the data**\
     Use the cleaning notebook in the scripts folder to clean the dataset. Resulting cleaned dataset will be in the data folder.
 4. **Training models**
     1) **Train models using train.py**
-        1. Run ```python ./distilbert_sentiment.py ..\data\cleaned_pre_ai.csv```
-        2. Run ```python ./distilbert_sentiment.py ..\data\cleaned_post_ai.csv```
-        3. Run ```python ./scripts/plot_distilbert.py``` in the project root directory 
+        1. 
     
-1) https://datauvalibrary.opendata.arcgis.com/datasets/charlot	tesville::parking-tickets/about
+1) https://datauvalibrary.opendata.arcgis.com/datasets/charlottesville::parking-tickets/about
 
