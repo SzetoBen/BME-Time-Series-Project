@@ -36,7 +36,7 @@ BME-Time-Series-Project
 ├── data
 │   ├── Parking_Tickets.csv
 │   ├── Processed_Parking_Tickets.csv
-│   ├── Metadata.md
+│   ├── METADATA.md
 │   ├── Figure 1.png
 │   └── Figure 2.png
 ├── LICENSE
@@ -48,6 +48,7 @@ BME-Time-Series-Project
 │   ├── roc_random_forest.png
 │   └── roc_xgboost.png
 ├── README.md
+├── requirements.txt
 └── scripts
     ├── ParkingTicketsCleaning.ipynb
     └── train.py
@@ -62,9 +63,9 @@ BME-Time-Series-Project
 2. **Install dependencies**\
     pip install -r requirements.txt
 3. **Prepare the data**\
-    Use the cleaning notebook in the scripts folder to clean the dataset. Resulting cleaned dataset will be in the data folder.
+    Use the cleaning notebook "ParkingTicketsCleaning.ipynb" in the scripts folder to clean the dataset. Resulting cleaned dataset will be in the data folder.
 4. **Training models**
-    1) **Train models using train.py**
+    1) **Train models using train.py**\
         1. 
     
 1) https://datauvalibrary.opendata.arcgis.com/datasets/charlottesville::parking-tickets/about
